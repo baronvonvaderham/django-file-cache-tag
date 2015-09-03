@@ -1,0 +1,8 @@
+language: python
+
+install:
+  - pip install -r test_requirements.txt
+
+script: python run_tests.py
+notifications:
+  email: false
