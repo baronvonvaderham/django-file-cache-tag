@@ -1,6 +1,6 @@
-=========
-filecache
-=========
+================
+django_filecache
+================
 
 This package provides a custom template tag library that allows
 the user to implement a secondary cache back-end without altering
@@ -17,9 +17,9 @@ Installation
 ------------
 
 1.  Add "-e git+https://github.com/baronvonvaderham/django-filecache.git#egg=filecache"
-    to requirements.txt in your project.
+    to requirements.txt in your project (not on pypi yet).
 
-2.  Add "filecache" to your INSTALLED_APPS setting like this:
+2.  Add "filecache" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = (
         ...
@@ -31,7 +31,7 @@ Installation
 
 4. Run "python manage.py migrate" to create the required models.
 
-5. Modify your CACHES setting like this:
+5. Modify your CACHES setting like this::
 
     CACHES = {
         'default': {
@@ -43,17 +43,16 @@ Installation
         }
     }
 
-6. Add a FILECACHE_DIRECTORY setting to settings.py, either as an absolute path
-    or as accepting an environment variable like this:
+6. Add a FILECACHE_DIRECTORY setting to settings.py, either as an absolute path or as accepting an environment variable::
 
     FILECACHE_DIRECTORY = os.environ.get("FILECACHE_DIRECTORY", "/CACHE/filecache/")
 
 Example Usage
 -------------
 
-Templates:
+Templates::
 
-    {% file_cache [expiration time] request.get_full_path arg1 arg2 ... %}
+        {% file_cache [expiration time] request.get_full_path arg1 arg2 ... %}
 
     Any number of args can be accepted into the tag. All will be hashed and
     returned in FileBasedCacheTag.get_cache_key_args()['hash'].
