@@ -17,7 +17,8 @@ def main():
     from django.conf import global_settings
 
     global_settings.INSTALLED_APPS = (
-        'django_filecache',
+        'file_cache_tag',
+        'adv_cache_tag',
     )
     global_settings.CELERY_ALWAYS_EAGER = True
 
@@ -80,9 +81,9 @@ def main():
 
     if django.VERSION > (1, 2):
         test_runner = test_runner()
-        failures = test_runner.run_tests(['django_filecache'])
+        failures = test_runner.run_tests(['file_cache_tag'])
     else:
-        failures = test_runner(['django_filecache'], verbosity=2)
+        failures = test_runner(['file_cache_tag'], verbosity=2)
     sys.exit(failures)
 
 if __name__ == '__main__':

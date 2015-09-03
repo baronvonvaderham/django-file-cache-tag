@@ -8,15 +8,15 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name='django-filecache',
+    name='django-file-cache-tag',
     version='0.1',
     description="Provides an custom template tag library for template fragment caching with a non-default back-end.",
     author="Scott Johnson",
     author_email='ben@aashe.org',
-    url='https://github.com/aashe/django-filecache',
+    url='https://github.com/aashe/django-file-cache-tag',
     long_description=read("README.rst"),
     packages=[
-        'filecache',
+        'file_cache_tag',
         ],
     classifiers=[
         'Environment :: Web Environment',
@@ -27,5 +27,5 @@ setup(
         'Framework :: Django',
     ],
     test_suite='tests.main',
-    install_requires=['Django'],
+    install_requires=['Django', 'django-adv-cache-tag'],
 )

@@ -1,10 +1,10 @@
-================
-django_filecache
-================
+=====================
+django_file_cache_tag
+=====================
 
 This package provides a custom template tag library that allows
 the user to implement a secondary cache back-end without altering
-their default in CACHES[].
+their default in CACHES.
 
 This is currently configured for a file-based cache that parses
 the URL of the requested page and a list of vary_on attributes
@@ -16,14 +16,14 @@ caches side by side.
 Installation
 ------------
 
-1.  Add "-e git+https://github.com/baronvonvaderham/django-filecache.git#egg=filecache"
-    to requirements.txt in your project (not on pypi yet).
+1.  Add "-e git+https://github.com/baronvonvaderham/django-file-cache-tag.git#egg=file-cache-tag"
+    and "django-adv-cache-tag" to requirements.txt.
 
-2.  Add "filecache" to your INSTALLED_APPS setting like this::
+2.  Add "file_cache_tag" and "adv-cache-tag" to your INSTALLED_APPS setting like this::
 
         INSTALLED_APPS = (
             ...
-            'django_filecache',
+            'file_cache_tag',
         )
 
 3.  Run "pip install -r requirements.txt" from your project's
