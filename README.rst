@@ -19,11 +19,12 @@ Installation
 1.  Add "-e git+https://github.com/baronvonvaderham/django-file-cache-tag.git#egg=file-cache-tag"
     and "django-adv-cache-tag" to requirements.txt.
 
-2.  Add "file_cache_tag" and "adv-cache-tag" to your INSTALLED_APPS setting like this::
+2.  Add "file_cache_tag" and "adv_cache_tag" to your INSTALLED_APPS setting like this::
 
         INSTALLED_APPS = (
             ...
             'file_cache_tag',
+            'adv_cache_tag',
         )
 
 3.  Run "pip install -r requirements.txt" from your project's
@@ -49,13 +50,15 @@ Installation
 
 Example Usage
 -------------
+Any number of args can be accepted into the tag. All will be hashed and returned in
+FileBasedCacheTag.get_cache_key_args()['hash'].
 
 Templates::
 
+        {% load custom_caching %}
         {% file_cache [expiration time] request.get_full_path arg1 arg2 ... %}
-
-    Any number of args can be accepted into the tag. All will be hashed and
-    returned in FileBasedCacheTag.get_cache_key_args()['hash'].
+        ...
+        {% endfile_cache %}
 
 Views:
 
