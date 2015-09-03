@@ -21,10 +21,10 @@ Installation
 
 2.  Add "filecache" to your INSTALLED_APPS setting like this::
 
-    INSTALLED_APPS = (
-        ...
-        'django_filecache',
-    )
+        INSTALLED_APPS = (
+            ...
+            'django_filecache',
+        )
 
 3.  Run "pip install -r requirements.txt" from your project's
     directory to install required packages.
