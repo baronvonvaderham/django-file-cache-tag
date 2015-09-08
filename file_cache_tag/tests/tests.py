@@ -55,15 +55,11 @@ class DemoSiteTest(TestCase):
         # Make initial requests to create caches
         anon_response = self.client.get('/test/')
         staff_response = self.staff_client.get('/test/')
-        print anon_response
-        print staff_response
         self.assertNotEqual(anon_response, staff_response)
 
         # Verify caches were created
         anon_key = custom_caching.generate_cache_key('/test/', ['anon'])
         staff_key = custom_caching.generate_cache_key('/test/', ['staff'])
-        print anon_key
-        print staff_key
         anon_cached = filecache.get(anon_key)
         staff_cached = filecache.get(staff_key)
         self.assertTrue(anon_cached)
