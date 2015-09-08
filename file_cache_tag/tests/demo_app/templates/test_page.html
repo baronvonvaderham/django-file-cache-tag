@@ -1,0 +1,16 @@
+<html>
+
+{% load custom_caching %}
+{% define "anon" as version %}
+
+{% file_cache 1400 request.path version %}
+<body>
+    IT WORKS!
+
+    {% for item in request %}
+    item
+    {% endfor %}
+</body>
+{% endfile_cache %}
+
+</html>

@@ -17,8 +17,8 @@ def main():
     from django.conf import global_settings
 
     global_settings.INSTALLED_APPS = (
-        'file_cache_tag',
         'adv_cache_tag',
+        'file_cache_tag',
     )
     global_settings.CELERY_ALWAYS_EAGER = True
 
@@ -37,7 +37,9 @@ def main():
         global_settings.DATABASE_ENGINE = "sqlite3"
         global_settings.DATABASE_NAME = ":memory:"
 
-    global_settings.ROOT_URLCONF = 'django_filecache.tests.demo_app.urls'
+    global_settings.ROOT_URLCONF = 'file_cache_tag.tests.demo_app.urls'
+
+    global_settings.TEMPLATE_DIRS = (os.path.join(BASE_PATH, 'file_cache_tag/tests/demo_app/templates'),)
 
     global_settings.TEMPLATE_CONTEXT_PROCESSORS = (
             'django.core.context_processors.static',
@@ -47,7 +49,7 @@ def main():
             'django.core.context_processors.request',
             )
 
-    global_settings.FILECACHE_DIRECTORY = os.environ.get("FILECACHE_DIRECTORY", "/CACHE/filecache/")
+    global_settings.FILECACHE_DIRECTORY = os.environ.get("FILECACHE_DIRECTORY", os.path.join(BASE_PATH, 'CACHE/filecache/'))
 
     global_settings.CACHES = {
         'default': {
@@ -63,7 +65,6 @@ def main():
         'django.middleware.cache.UpdateCacheMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.middleware.cache.FetchFromCacheMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
