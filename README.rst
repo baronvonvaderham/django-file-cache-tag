@@ -13,6 +13,9 @@ accommodate other methods of key generation and other cache
 back-ends, or extended to create additional tags for yet more
 caches side by side.
 
+This package is intended for Django versions < 1.8, as 1.8+ added
+this functionality to the native {% cache %} tag.
+
 Installation
 ------------
 
