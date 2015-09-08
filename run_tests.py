@@ -17,6 +17,10 @@ def main():
     from django.conf import global_settings
 
     global_settings.INSTALLED_APPS = (
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.admin',
         'adv_cache_tag',
         'file_cache_tag',
     )

@@ -3,13 +3,14 @@
 {% load custom_caching %}
 {% define "anon" as version %}
 
+{% if user.is_staff %}
+    {% define "staff" as version %}
+{% endif %}
+
 {% file_cache 1400 request.path version %}
 <body>
-    IT WORKS!
-
-    {% for item in request %}
-    item
-    {% endfor %}
+    IT WORKS! -- {{ version }}
+    {{ user }}
 </body>
 {% endfile_cache %}
 
