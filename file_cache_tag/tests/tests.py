@@ -6,6 +6,7 @@ from file_cache_tag.templatetags import custom_caching
 from shutil import rmtree
 
 from django.conf import global_settings
+import os
 
 
 class DemoSiteTest(TestCase):
@@ -14,7 +15,7 @@ class DemoSiteTest(TestCase):
         self.staff_client = Client()
 
     def tearDown(self):
-        rmtree(global_settings.FILECACHE_DIRECTORY)
+        rmtree(os.environ.get("FILECACHE_DIRECTORY", os.path.join(os.path.dirname(__file__), '../../CACHE/filecache/')))
         pass
 
     # Test that the demo_app generic view works
