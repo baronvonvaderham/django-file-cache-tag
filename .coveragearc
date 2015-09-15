@@ -1,3 +1,2 @@
 [run]
-source = django-file-cache-tag
-omit = *django-adv-cache-tag*
+source = file_cache_tag
