@@ -17,7 +17,6 @@ class FileBasedCacheTag(CacheTag):
         args = self.get_cache_key_args()
         path = template.resolve_variable(args['name'], self.context)
         key = 'filecache.' + path + '.' +args['hash']
-        print ("REAL KEY: ", key)
         return key
 
 # Register the tag for use
