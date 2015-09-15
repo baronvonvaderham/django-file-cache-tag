@@ -15,8 +15,6 @@ class DemoSiteTest(TestCase):
         self.staff_client = Client()
 
     def tearDown(self):
-        rmtree(os.environ.get("FILECACHE_DIRECTORY", os.path.join(os.path.dirname(__file__),
-                                                                  '..', '..', '/CACHE/filecache/')))
         pass
 
     # Test that the demo_app generic view works
