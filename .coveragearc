@@ -1,2 +1,3 @@
 [run]
-source = django_constant_contact
+source = django-file-cache-tag
+omit = *adv-cache-tag*
