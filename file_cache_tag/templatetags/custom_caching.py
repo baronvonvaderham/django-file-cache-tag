@@ -2,7 +2,7 @@ from django import template
 from adv_cache_tag.tag import CacheTag
 import hashlib
 from django.utils.http import urlquote
-import django.core.cache as cache
+import django.core.cache as caches
 
 # Extending the CacheTag class from django-adv-cache-tag
 class FileBasedCacheTag(CacheTag):
@@ -17,6 +17,7 @@ class FileBasedCacheTag(CacheTag):
         args = self.get_cache_key_args()
         path = template.resolve_variable(args['name'], self.context)
         key = 'filecache.' + path + '.' +args['hash']
+        print ("REAL KEY: ", key)
         return key
 
 # Register the tag for use
@@ -36,5 +37,5 @@ def generate_cache_key(url, vary_on):
 
 # Manually invalidates cache for key provided
 def invalidate_filecache(key):
-    file_cache = cache.get_cache('filecache')
+    file_cache = caches.get_cache('filecache')
     file_cache.delete(key)
