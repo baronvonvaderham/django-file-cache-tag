@@ -14,7 +14,7 @@ setup(
     author="Scott Johnson",
     author_email='ben@aashe.org',
     url='https://github.com/aashe/django-file-cache-tag',
-    long_description=read("README.rst"),
+    long_description=read("README.md"),
     packages=[
         'file_cache_tag',
         ],
