@@ -1,3 +1,2 @@
 [run]
-source = file-cache-tag
 omit = *adv-cache-tag*
