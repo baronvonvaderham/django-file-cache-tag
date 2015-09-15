@@ -2,7 +2,7 @@
 django_file_cache_tag
 =====================
 
-[![Build Status](https://travis-ci.org/baronvonvaderham/django-file-cache-tag.svg?branch=master)](https://travis-ci.org/baronvonvaderham/django-file-cache-tag)
+[![Build Status](https://travis-ci.org/baronvonvaderham/django-file-cache-tag.svg?branch=master)](https://travis-ci.org/baronvonvaderham/django-file-cache-tag) [![Coverage Status](https://coveralls.io/repos/baronvonvaderham/django-file-cache-tag/badge.svg?branch=master&service=github)](https://coveralls.io/github/baronvonvaderham/django-file-cache-tag?branch=master)
 
 This package provides a custom template tag library that allows
 the user to implement a secondary cache back-end without altering
