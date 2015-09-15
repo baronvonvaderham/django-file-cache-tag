@@ -1,2 +1,3 @@
 [run]
 source = file_cache_tag
+omit = *adv_cache_tag*
