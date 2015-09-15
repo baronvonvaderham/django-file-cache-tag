@@ -3,6 +3,7 @@ language: python
 install:
   - pip install -r test_requirements.txt
 
-script: python run_tests.py
+script: coverage run --source=file_cache_tag setup.py test
 notifications:
   email: false
+after_success: coveralls
