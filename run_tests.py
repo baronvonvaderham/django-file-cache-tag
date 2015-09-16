@@ -53,7 +53,7 @@ def main():
             'django.core.context_processors.request',
             )
 
-    FILECACHE_DIRECTORY = os.environ.get("FILECACHE_DIRECTORY", os.path.join(BASE_PATH, 'CACHE/filecache/'))
+    FILECACHE_DIRECTORY = os.environ.get("FILECACHE_DIRECTORY", '/tmp/filecache/')
 
     global_settings.CACHES = {
         'default': {
